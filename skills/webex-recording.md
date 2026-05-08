@@ -135,7 +135,7 @@ Return the content in this format:
 After returning the content, ask:
 > "Where do you want to save this? Options:
 > 1. Note file only (`memory/notes/YYYY-MM-DD-<topic>.md`)
-> 2. Note file + update CII Product Pulse (if CII-related)
+> 2. Note file + update relevant project tracker
 > 3. Just show me the content (don't save)
 > 4. Custom location"
 

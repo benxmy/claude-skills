@@ -50,7 +50,7 @@ The argument is a person's name (or partial match).
    ```bash
    ~/.config/claude-graph/bin/msgraph calendar 1
    ```
-   Check if there's a meeting with this person today. If so, note the time, duration, and any other attendees. This helps frame the prep — "Your 1:1 with Vickie is at 2:00 PM (30 min)."
+   Check if there's a meeting with this person today. If so, note the time, duration, and any other attendees. This helps frame the prep — "Your 1:1 with Alex is at 2:00 PM (30 min)."
 
 5. **Pull Outlook email history (14 days).** Run:
    ```bash

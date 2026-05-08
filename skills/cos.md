@@ -96,7 +96,7 @@ The user has something (an email, a request, a link, an idea) and needs to figur
    - Last meaningful activity
    - Open questions or blockers
    - Key people involved
-3. If there's a dedicated memory file (e.g., `cii-data-in-duo.md`), reference it for deeper reading.
+3. If there's a dedicated memory file (e.g., `project-alpha.md`), reference it for deeper reading.
 
 ### resource — Save a PM Resource
 

@@ -12,7 +12,7 @@ allowed-tools:
 
 # /portfolio-deck — Generate Portfolio Status Deck
 
-Generate a PowerPoint deck summarizing all active work (Cisco) projects.
+Generate a PowerPoint deck summarizing all active work projects.
 
 **Output:** `~/projects/portfolio-deck/portfolio-status.pptx`
 
@@ -42,4 +42,4 @@ open ~/projects/portfolio-deck/portfolio-status.pptx
 - Data sourced from `workboard.md`, `okrs.md`, and project memory frontmatter
 - RAG status: green (no blockers, active), yellow (waiting on someone or at risk), red (blocked or off track)
 - Override RAG per-project by adding `rag: green|yellow|red` to project memory frontmatter
-- Only includes "Active — Work (Cisco)" projects
+- Only includes "Active — Work" projects

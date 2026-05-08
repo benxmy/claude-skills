@@ -80,7 +80,7 @@ Run these in parallel where possible:
 
 1. **Internal docs** — search for existing work:
    - Grep `~/projects/content-audit-results/` for the topic
-   - Check the Identity Everywhere reference (`~/projects/content-audit-results/identity-everywhere/REFERENCE.md`) if it's a Duo/Cisco integration topic
+   - Check project-specific reference datasets if available for the topic
    - Search `~/.claude/projects/*/memory/notes/` for related meeting notes
 
 2. **Confluence** — check if there's already research or plans:
@@ -206,7 +206,7 @@ Run queries sequentially (each may inform the next):
 **Known gotchas** (from past research):
 - CUSTOMER_SUMMARY segment totals can change between snapshots — always note the date
 - DirSync syncing is bimodal (active or completely dormant)
-- CII-to-CUSTOMER_SUMMARY join has ~30% unmatched rate
+- TABLE_A-to-TABLE_B join has ~30% unmatched rate
 - Always use current snapshot, not cached numbers from previous sessions
 
 ### Step 5: Analyze and present

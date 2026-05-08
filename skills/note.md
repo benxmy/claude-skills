@@ -146,6 +146,6 @@ When updating the index, always read it first, then edit (don't overwrite).
 
 - You can reference people by first name — the index will group them.
 - Projects should match names from the workboard/MEMORY.md when possible.
-- Use `/note search vickie` to find all notes involving Vickie.
+- Use `/note search alex` to find all notes involving Alex.
 - Use `/note search entra lite` to find all notes about the Entra Lite project.
 - Notes persist across sessions in your memory directory.

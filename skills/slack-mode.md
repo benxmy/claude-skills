@@ -11,7 +11,7 @@ Run the slack-mode script: $ARGUMENTS
 - "status" = show current state
 
 ```bash
-~/duo-cli/hooks/slack-mode.sh $ARGUMENTS
+~/tools/hooks/slack-mode.sh $ARGUMENTS
 ```
 
 After running, confirm to the user what happened (Slack enabled until when, or back to terminal).

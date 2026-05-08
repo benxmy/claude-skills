@@ -68,7 +68,7 @@ Arguments passed: `$ARGUMENTS`
    - If Webex triage returned nothing or failed, just say "Webex is quiet" and move on.
 
 4. **Route Webex context to projects.** Before the status scan, check whether any Webex triage items relate to active workboard projects. For each match:
-   - Read the project's memory file (e.g., `cii-data-in-duo.md`, `entra-lite-cii.md`, etc.)
+   - Read the project's memory file (e.g., `project-alpha.md`, `project-beta.md`, etc.)
    - Append a dated context note with the relevant Webex signal — who said what, what decision was made, what's blocked
    - Use `Edit` to append (never overwrite) under a `## Recent Context` section at the bottom of the file. Create the section if it doesn't exist.
    - Keep entries concise: one line per item, dated, with the space name and key info.
@@ -77,7 +77,7 @@ Arguments passed: `$ARGUMENTS`
    Example format in a project memory file:
    ```
    ## Recent Context
-   - 2026-05-04: [Duo Everywhere space] William Hansch shared updated Firewall slides — review before May 8 deadline
+   - 2026-05-04: [Project space] Alice shared updated slides — review before Friday deadline
    - 2026-05-04: [DM - Simon] Still no response on tenant connection explanation — 5 days waiting
    ```
 

@@ -41,7 +41,7 @@ Display:
 /write-customer-doc feature-guide <topic>   What it does, who sees it, how to use it
 /write-customer-doc release-notes <topic>   What shipped and what it means for customers
 /write-customer-doc alpha-beta <topic>      Outreach, onboarding, or program materials
-/write-customer-doc kb-article <topic>      How-to content, duo.com/docs style
+/write-customer-doc kb-article <topic>      How-to content, your product docs style
 /write-customer-doc <topic>                 Interactive — asks what type you need
 ```
 
@@ -58,7 +58,7 @@ Show the four types with one-line descriptions. Ask the user to pick one.
 Before asking questions, silently gather what you can. Run these in parallel:
 
 1. **Project memory** — search `~/.claude/projects/*/memory/` for the topic.
-   Check project-specific memory files (e.g., `cii-data-in-duo.md`, `entra-lite-cii.md`).
+   Check project-specific memory files (e.g., `project-alpha.md`, `project-beta.md`).
 
 2. **Content style library** — read `~/projects/content-style-library.md`. You will use
    the **professional-direct register** for all customer-facing docs.
@@ -66,11 +66,11 @@ Before asking questions, silently gather what you can. Run these in parallel:
 3. **Screenshots** — check `~/Desktop/` for recent screenshots (today's date) that may
    show relevant UI. Read any that look related — they're a primary source for feature guides.
 
-4. **Public docs** — if the topic relates to a Duo/CII feature, fetch the relevant page
-   from `duo.com/docs` (e.g., `https://duo.com/docs/identity-security`) for accuracy.
+4. **Public docs** — if the topic relates to a product feature, fetch the relevant page
+   from your public docs site for accuracy.
 
-5. **Identity Everywhere reference** — if the topic is Duo/CII/identity related, check
-   `~/projects/content-audit-results/identity-everywhere/REFERENCE.md`.
+5. **Identity Everywhere reference** — if the topic relates to an active project, check
+   a reference dataset if one exists for the topic.
 
 Present a brief context summary:
 > **Sources found:** [list what you found — memory files, screenshots, docs pages]
@@ -106,17 +106,17 @@ Write the document using the **professional-direct register** from the content s
 - **Include prerequisite/config recommendations up front** — if there's something the customer
   should do to get the most out of a feature, say so in the Overview, not buried later.
   Example: "We strongly recommend adding additional IdP source integrations beyond the default
-  Duo integration to maximize accuracy and value."
+  product integration to maximize accuracy and value."
 - **Add alpha/beta disclaimers** — if the doc is for a pre-GA feature, include a NOTE that
   details may change based on feedback. Keep it brief, one sentence.
 - **Be specific about role access** — don't list every admin role generically. Only list roles
   that actually have access. Verify before assuming.
-- **Link to official docs by name, not "here"** — "See the [Duo Identity Security documentation](...)"
+- **Link to official docs by name, not "here"** — "See the [product documentation](...)"
   not "in the documentation here." Links need to survive copy-paste and format changes.
 - **Foreshadow upcoming improvements** — when current UX has friction (e.g., complex permission
   setup), briefly mention that a simpler path is coming. Builds confidence without overpromising.
 - **Keep the cross-launch pitch concise** — describe what it enables in one sentence. Don't
-  list every field in User360. "...enabling your team to seamlessly move from the Duo-specific
+  list every field in User360. "...enabling your team to seamlessly move from the product-specific
   view to the user's full identity context."
 
 ### Structure by Doc Type

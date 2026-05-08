@@ -49,7 +49,7 @@ Arguments passed: `$ARGUMENTS`
 2. Show today's entries. If none today, show the most recent day that has
    entries (up to 10 entries).
 3. After displaying, offer a brief summary of the day's activity pattern
-   (e.g., "Looks like you spent most of the morning on CII research, then
+   (e.g., "Looks like you spent most of the morning on product research, then
    switched to email after lunch.").
 
 ### If `$ARGUMENTS` is `summary` — summarize recent activity
@@ -119,7 +119,7 @@ as a yap entry — no need to prefix with `/yap` each time.
 5. Write the updated file.
 6. Respond with a brief, natural acknowledgment (not robotic). Examples:
    - "Logged."
-   - "Got it — deep work on CII."
+   - "Got it — deep work on the project."
    - "Noted. Busy morning!"
    Keep it to one short line. Don't parrot back the full entry.
 
@@ -133,13 +133,13 @@ as a yap entry — no need to prefix with `/yap` each time.
 # Yap Log
 
 ## 2026-04-13
-- **09:15** — Standup done, starting CII research
+- **09:15** — Standup done, starting product research
 - **10:30** — Finished first pass on trust level report
 - **12:00** — Lunch break
 
 ## 2026-04-12
 - **08:45** — Morning email triage
-- **14:00** — Duo CLI debugging session
+- **14:00** — Internal tool debugging session
 ```
 
 ---
