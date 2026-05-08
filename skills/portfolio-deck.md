@@ -3,7 +3,7 @@ name: portfolio-deck
 description: Generate a portfolio status PPTX deck from current workboard data. Covers all active work projects with RAG status, current state, next steps, and blockers.
 user-invocable: true
 allowed-tools:
-  - Read(~/.claude/projects/memory/*)
+  - Read(~/.claude/projects/*/memory/*)
   - Read(~/projects/claude-hub/server/*)
   - Bash(cd ~/projects/claude-hub && node *)
   - Bash(open *)

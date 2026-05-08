@@ -3,8 +3,8 @@ name: aha-sync
 description: Pull Aha release data, compare with workboard status, and interactively push updates. Helps keep Aha tickets current without manual editing.
 user-invocable: true
 allowed-tools:
-  - Read(~/.claude/projects/memory/*)
-  - Write(~/.claude/projects/memory/aha-cache.json)
+  - Read(~/.claude/projects/*/memory/*)
+  - Write(~/.claude/projects/*/memory/aha-cache.json)
   - Read(~/projects/claude-hub/server/*)
   - Bash(cd ~/projects/claude-hub && node *)
   - Bash(security find-generic-password *)
@@ -105,5 +105,5 @@ curl -s -H 'Authorization: Bearer KEY' 'https://<your-aha-instance>.aha.io/api/v
 
 - Aha API base: `https://<your-aha-instance>.aha.io/api/v1/`
 - Auth: Bearer token from macOS Keychain (service: `aha-api-key`)
-- Cache file: `~/.claude/projects/memory/aha-cache.json`
+- Cache file: `~/.claude/projects/*/memory/aha-cache.json`
 - Custom fields may need adjustment once we see the actual Aha API response structure

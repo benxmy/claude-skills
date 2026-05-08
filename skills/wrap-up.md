@@ -3,13 +3,13 @@ name: wrap-up
 description: End-of-day review. Compare what you planned vs what happened, capture carry-forwards, and update the workboard.
 user-invocable: true
 allowed-tools:
-  - Read(~/.claude/projects/memory/daily/*.md)
-  - Read(~/.claude/projects/memory/workboard.md)
-  - Read(~/.claude/projects/memory/MEMORY.md)
+  - Read(~/.claude/projects/*/memory/daily/*.md)
+  - Read(~/.claude/projects/*/memory/workboard.md)
+  - Read(~/.claude/projects/*/memory/MEMORY.md)
   - Read(~/yap-log.md)
-  - Edit(~/.claude/projects/memory/workboard.md)
-  - Edit(~/.claude/projects/memory/MEMORY.md)
-  - Edit(~/.claude/projects/memory/daily/*.md)
+  - Edit(~/.claude/projects/*/memory/workboard.md)
+  - Edit(~/.claude/projects/*/memory/MEMORY.md)
+  - Edit(~/.claude/projects/*/memory/daily/*.md)
   - Bash(date *)
 ---
 
@@ -21,7 +21,7 @@ Arguments passed: `$ARGUMENTS`
 
 1. **Get today's date**: `date '+%Y-%m-%d (%A)'`
 
-2. **Read today's plan** from `~/.claude/projects/memory/daily/YYYY-MM-DD.md` (using today's date).
+2. **Read today's plan** from `~/.claude/projects/*/memory/daily/YYYY-MM-DD.md` (using today's date).
    Also read `~/yap-log.md` for any activity entries from today — this is additional context for what actually happened, not a separate review step.
    - If no plan exists or the date doesn't match today, say: "No plan was set for today. Want to do a freeform review instead?" Then skip to step 4.
 

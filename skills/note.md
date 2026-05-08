@@ -3,11 +3,11 @@ name: note
 description: Take discrete notes for calls, meetings, or topics. Tag with people and projects. Search and retrieve later.
 user-invocable: true
 allowed-tools:
-  - Read(~/.claude/projects/memory/notes/*)
-  - Write(~/.claude/projects/memory/notes/*)
-  - Edit(~/.claude/projects/memory/notes/*)
-  - Glob(~/.claude/projects/memory/notes/*)
-  - Grep(~/.claude/projects/memory/notes/*)
+  - Read(~/.claude/projects/*/memory/notes/*)
+  - Write(~/.claude/projects/*/memory/notes/*)
+  - Edit(~/.claude/projects/*/memory/notes/*)
+  - Glob(~/.claude/projects/*/memory/notes/*)
+  - Grep(~/.claude/projects/*/memory/notes/*)
   - Bash(date *)
   - Bash(ls *)
   - Bash(touch ~/Projects/telegram-notify/.suppress-stop)
@@ -19,8 +19,8 @@ allowed-tools:
 Take notes during calls, meetings, or on any topic. Notes are tagged with
 people and projects so you can find them later.
 
-**Storage:** `~/.claude/projects/memory/notes/`
-**Index:** `~/.claude/projects/memory/notes/index.md`
+**Storage:** `~/.claude/projects/*/memory/notes/`
+**Index:** `~/.claude/projects/*/memory/notes/index.md`
 
 Arguments passed: `$ARGUMENTS`
 

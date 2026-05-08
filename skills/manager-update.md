@@ -3,8 +3,8 @@ name: manager-update
 description: Generate a focused 2-5 topic update for a weekly manager 1:1. Pulls from workboard, yap log, Webex, email, and meeting history. Writes approved topics to a shared OneDrive doc.
 user-invocable: true
 allowed-tools:
-  - Read(~/.claude/projects/memory/*)
-  - Glob(~/.claude/projects/memory/meetings/*)
+  - Read(~/.claude/projects/*/memory/*)
+  - Glob(~/.claude/projects/*/memory/meetings/*)
   - Read(~/yap-log.md)
   - Bash(cd ~/Projects/webex-agent:*)
   - Bash(~/.config/claude-graph/bin/msgraph *)
@@ -13,9 +13,9 @@ allowed-tools:
   - Bash(date *)
   - Bash(open *)
   - Bash(cat *)
-  - Grep(~/.claude/projects/memory/notes/*)
-  - Read(~/.claude/projects/memory/notes/*)
-  - Edit(~/.claude/projects/memory/meetings/*)
+  - Grep(~/.claude/projects/*/memory/notes/*)
+  - Read(~/.claude/projects/*/memory/notes/*)
+  - Edit(~/.claude/projects/*/memory/meetings/*)
 ---
 
 # /manager-update — Manager 1:1 Prep
@@ -37,14 +37,14 @@ Display:
 ```
 /manager-update <name>    Generate weekly manager update
 ```
-List meeting files from `~/.claude/projects/memory/meetings/`
+List meeting files from `~/.claude/projects/*/memory/meetings/`
 that contain a `**Manager update doc:**` field.
 
 ### Otherwise — run the update flow
 
 The argument is a person's name (partial match OK).
 
-1. **Find their meeting file.** Glob `~/.claude/projects/memory/meetings/*.md`
+1. **Find their meeting file.** Glob `~/.claude/projects/*/memory/meetings/*.md`
    and match the filename against the argument (case-insensitive, partial match).
    - If no match, say so and list available files.
    - If match found but no `**Manager update doc:**` field, say this person
@@ -68,7 +68,7 @@ The argument is a person's name (partial match OK).
 
 4. **Gather context from all sources.** Read these in parallel where possible:
 
-   **a. Workboard** — Read `~/.claude/projects/memory/workboard.md`.
+   **a. Workboard** — Read `~/.claude/projects/*/memory/workboard.md`.
    Focus on: items with blockers, items with "Waiting on" populated, items
    whose state has changed recently.
 
@@ -163,7 +163,7 @@ The argument is a person's name (partial match OK).
       ~/.config/claude-graph/bin/msgraph email person "<email>" --days 14 --max 20
       ```
 
-   **f. Related notes** — Grep `~/.claude/projects/memory/notes/`
+   **f. Related notes** — Grep `~/.claude/projects/*/memory/notes/`
       for the person's name (case-insensitive). If any note files mention them,
       read the matching files and look for open action items, decisions, or
       context relevant to the upcoming 1:1.

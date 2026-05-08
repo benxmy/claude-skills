@@ -3,8 +3,8 @@ name: deprioritize
 description: Park a project and draft stakeholder communications about the deferral. Helps you consciously deprioritize with clear messaging.
 user-invocable: true
 allowed-tools:
-  - Read(~/.claude/projects/memory/workboard.md)
-  - Edit(~/.claude/projects/memory/workboard.md)
+  - Read(~/.claude/projects/*/memory/workboard.md)
+  - Edit(~/.claude/projects/*/memory/workboard.md)
   - Bash(date *)
 ---
 
