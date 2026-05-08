@@ -3,13 +3,13 @@ name: aha-sync
 description: Pull Aha release data, compare with workboard status, and interactively push updates. Helps keep Aha tickets current without manual editing.
 user-invocable: true
 allowed-tools:
-  - Read(~/.claude/projects/-Users-benmyers/memory/*)
-  - Write(~/.claude/projects/-Users-benmyers/memory/aha-cache.json)
+  - Read(~/.claude/projects/memory/*)
+  - Write(~/.claude/projects/memory/aha-cache.json)
   - Read(~/projects/claude-hub/server/*)
-  - Bash(cd /Users/benmyers/projects/claude-hub && node *)
+  - Bash(cd ~/projects/claude-hub && node *)
   - Bash(security find-generic-password *)
   - Bash(security add-generic-password *)
-  - Bash(curl * ciscosecurity.aha.io *)
+  - Bash(curl * <your-aha-instance>.aha.io *)
   - Bash(date *)
 ---
 
@@ -30,10 +30,10 @@ security find-generic-password -s "aha-api-key" -w 2>/dev/null && echo "KEY_FOUN
 ```
 
 If `NO_KEY`:
-1. Ask the user to generate an API key at https://ciscosecurity.aha.io/settings/api_keys
+1. Ask the user to generate an API key at `https://<your-aha-instance>.aha.io/settings/api_keys`
 2. Once they provide it, store it:
 ```bash
-security add-generic-password -s "aha-api-key" -a "benmyers" -w "THE_KEY" -U
+security add-generic-password -s "aha-api-key" -a "$USER" -w "THE_KEY" -U
 ```
 3. Then proceed with the sync.
 
@@ -44,7 +44,7 @@ security add-generic-password -s "aha-api-key" -a "benmyers" -w "THE_KEY" -U
 1. Pull latest data from Aha for all linked projects:
 
 ```bash
-cd /Users/benmyers/projects/claude-hub && node -e "
+cd ~/projects/claude-hub && node -e "
 import { discoverProjects } from './server/discovery.js';
 import { pullAllLinked, readCache } from './server/aha.js';
 const projects = discoverProjects().filter(p => p.category === 'work');
@@ -76,7 +76,7 @@ For each flagged/stale item:
 
 Push via:
 ```bash
-cd /Users/benmyers/projects/claude-hub && node -e "
+cd ~/projects/claude-hub && node -e "
 import { pushUpdate } from './server/aha.js';
 const result = await pushUpdate('RELEASE_ID', {
   productConfidence: 'VALUE',
@@ -94,7 +94,7 @@ If the user wants to link a project that's currently unlinked:
 
 1. Search Aha for the release:
 ```bash
-curl -s -H 'Authorization: Bearer KEY' 'https://ciscosecurity.aha.io/api/v1/releases?q=SEARCH_TERM' | python3 -c "import sys,json; data=json.load(sys.stdin); [print(f'{r[\"id\"]}: {r[\"name\"]}') for r in data.get('releases',[])]"
+curl -s -H 'Authorization: Bearer KEY' 'https://<your-aha-instance>.aha.io/api/v1/releases?q=SEARCH_TERM' | python3 -c "import sys,json; data=json.load(sys.stdin); [print(f'{r[\"id\"]}: {r[\"name\"]}') for r in data.get('releases',[])]"
 ```
 2. Once identified, tell user to add `aha: RELEASE-ID` to the project's memory file frontmatter
 3. Then pull fresh data for the newly linked project
@@ -103,7 +103,7 @@ curl -s -H 'Authorization: Bearer KEY' 'https://ciscosecurity.aha.io/api/v1/rele
 
 ## Notes
 
-- Aha API base: `https://ciscosecurity.aha.io/api/v1/`
+- Aha API base: `https://<your-aha-instance>.aha.io/api/v1/`
 - Auth: Bearer token from macOS Keychain (service: `aha-api-key`)
-- Cache file: `~/.claude/projects/-Users-benmyers/memory/aha-cache.json`
+- Cache file: `~/.claude/projects/memory/aha-cache.json`
 - Custom fields may need adjustment once we see the actual Aha API response structure

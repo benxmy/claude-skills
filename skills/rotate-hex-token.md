@@ -1,7 +1,7 @@
 Help the user rotate an API token stored in macOS Keychain.
 
 Ask which token to rotate. Known tokens:
-- **hex** — Keychain service: `hex-api`, account: `HEX_API_TOKEN`. Used by customer-research Hex MCP server. Also in `~/Projects/customer-research/.env` as `HEX_API_TOKEN`.
+- **hex** — Keychain service: `hex-api`, account: `HEX_API_TOKEN`. Used by Hex MCP server. Also referenced in project `.env` files as `HEX_API_TOKEN`.
 
 Then ask the user to paste the new token value.
 

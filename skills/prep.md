@@ -3,11 +3,11 @@ name: prep
 description: Prepare for a conversation with someone. Pulls their tracking file, recent Webex DM history, and Outlook email threads for full context.
 user-invocable: true
 allowed-tools:
-  - Read(~/.claude/projects/-Users-benmyers/memory/meetings/*)
-  - Glob(~/.claude/projects/-Users-benmyers/memory/meetings/*)
-  - Grep(~/.claude/projects/-Users-benmyers/memory/notes/*)
-  - Read(~/.claude/projects/-Users-benmyers/memory/notes/*)
-  - Bash(cd /Users/benmyers/Projects/webex-agent:*)
+  - Read(~/.claude/projects/memory/meetings/*)
+  - Glob(~/.claude/projects/memory/meetings/*)
+  - Grep(~/.claude/projects/memory/notes/*)
+  - Read(~/.claude/projects/memory/notes/*)
+  - Bash(cd ~/Projects/webex-agent:*)
   - Bash(~/.config/claude-graph/bin/msgraph email *)
   - Bash(~/.config/claude-graph/bin/msgraph calendar *)
 ---
@@ -30,20 +30,20 @@ Display:
 ```
 /prep <name>    Get a briefing on a person before a call
 ```
-List available tracking files from `~/.claude/projects/-Users-benmyers/memory/meetings/`.
+List available tracking files from `~/.claude/projects/memory/meetings/`.
 
 ### Otherwise — run the briefing
 
 The argument is a person's name (or partial match).
 
-1. **Find their tracking file.** Glob `~/.claude/projects/-Users-benmyers/memory/meetings/*.md`
+1. **Find their tracking file.** Glob `~/.claude/projects/memory/meetings/*.md`
    and match the filename against the argument (case-insensitive, partial match OK).
    - If no match, say so and list available files.
    - If multiple matches, show them and ask which one.
 
 2. **Read the tracking file.** Display it — this has topics to raise and past discussion notes.
 
-3. **Search for related notes.** Grep `~/.claude/projects/-Users-benmyers/memory/notes/` for
+3. **Search for related notes.** Grep `~/.claude/projects/memory/notes/` for
    the person's name. If any note files mention them, list them with dates and topics.
 
 4. **Pull today's calendar for meeting context.** Run:
@@ -65,7 +65,7 @@ The argument is a person's name (or partial match).
 
 6. **Pull Webex DM history (14 days).** Run:
    ```bash
-   cd /Users/benmyers/Projects/webex-agent && set -a && source .env && set +a && .venv/bin/python3.12 -c "
+   cd ~/Projects/webex-agent && set -a && source .env && set +a && .venv/bin/python3.12 -c "
    import sys, os, json
    sys.path.insert(0, '.')
    sys.path.insert(0, 'servers')

@@ -3,13 +3,13 @@ name: morning-coffee
 description: Daily focus picker. Reads your workboard, pulls today's calendar and recent emails, helps you pick 2-3 things to focus on today, flags stalled work, and protects time for writing.
 user-invocable: true
 allowed-tools:
-  - Read(~/.claude/projects/-Users-benmyers/memory/workboard.md)
-  - Read(~/.claude/projects/-Users-benmyers/memory/MEMORY.md)
-  - Read(~/.claude/projects/-Users-benmyers/memory/*.md)
+  - Read(~/.claude/projects/memory/workboard.md)
+  - Read(~/.claude/projects/memory/MEMORY.md)
+  - Read(~/.claude/projects/memory/*.md)
   - Read(~/Projects/webex-agent/output/*.md)
-  - Edit(~/.claude/projects/-Users-benmyers/memory/workboard.md)
-  - Edit(~/.claude/projects/-Users-benmyers/memory/*.md)
-  - Write(~/.claude/projects/-Users-benmyers/memory/daily/*.md)
+  - Edit(~/.claude/projects/memory/workboard.md)
+  - Edit(~/.claude/projects/memory/*.md)
+  - Write(~/.claude/projects/memory/daily/*.md)
   - Write(~/today-plan.md)
   - Bash(date *)
   - Bash(~/.config/claude-graph/bin/msgraph calendar *)
@@ -22,7 +22,7 @@ Arguments passed: `$ARGUMENTS`
 
 ## Steps
 
-1. **Read the workboard** at `~/.claude/projects/-Users-benmyers/memory/workboard.md`.
+1. **Read the workboard** at `~/.claude/projects/memory/workboard.md`.
    Also read MEMORY.md for any specific reminders due today.
 
 2. **Get today's date and pull calendar + emails + Webex** — run all in parallel:
@@ -108,7 +108,7 @@ Arguments passed: `$ARGUMENTS`
 9. **Update the workboard** — set `Last reviewed: YYYY-MM-DD` at the top.
 
 10. **Save the plan** — once Ben confirms his focus items, write them to
-   `~/.claude/projects/-Users-benmyers/memory/daily/YYYY-MM-DD.md` (using today's date) and also to `~/today-plan.md` (overwritten daily for easy access) so `/today` can
+   `~/.claude/projects/memory/daily/YYYY-MM-DD.md` (using today's date) and also to `~/today-plan.md` (overwritten daily for easy access) so `/today` can
    recall it. Format:
    ```
    # Today's Plan — YYYY-MM-DD (Day)

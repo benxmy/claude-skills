@@ -3,14 +3,14 @@ name: research
 description: Structured research framework for product/opportunity research or customer/adoption research. Provides a consistent checklist so you're not making it up as you go.
 user-invocable: true
 allowed-tools:
-  - Read(~/.claude/projects/-Users-benmyers/memory/*)
+  - Read(~/.claude/projects/memory/*)
   - Read(~/projects/content-audit-results/*)
   - Read(~/projects/content-style-library.md)
   - Glob(~/projects/*)
   - Grep(~/projects/*)
-  - Grep(~/.claude/projects/-Users-benmyers/memory/*)
+  - Grep(~/.claude/projects/memory/*)
   - Bash(~/.config/claude-graph/bin/msgraph email *)
-  - Bash(cd /Users/benmyers/Projects/webex-agent:*)
+  - Bash(cd ~/Projects/webex-agent:*)
   - Bash(date *)
   - mcp__snowflake__query
   - mcp__snowflake__list_tables
@@ -50,7 +50,7 @@ Briefly explain the two modes:
 
 ### If `$ARGUMENTS` starts with `status` — show active research
 
-Read `~/.claude/projects/-Users-benmyers/memory/MEMORY.md` and display the
+Read `~/.claude/projects/memory/MEMORY.md` and display the
 "Active Research" section. For each item, show what's done and what remains.
 
 ### If `$ARGUMENTS` starts with `product` — product/opportunity research
@@ -81,11 +81,11 @@ Run these in parallel where possible:
 1. **Internal docs** — search for existing work:
    - Grep `~/projects/content-audit-results/` for the topic
    - Check the Identity Everywhere reference (`~/projects/content-audit-results/identity-everywhere/REFERENCE.md`) if it's a Duo/Cisco integration topic
-   - Search `~/.claude/projects/-Users-benmyers/memory/notes/` for related meeting notes
+   - Search `~/.claude/projects/memory/notes/` for related meeting notes
 
 2. **Confluence** — check if there's already research or plans:
    - Search Ben's personal space and known project spaces
-   - Check `~/.claude/projects/-Users-benmyers/memory/MEMORY.md` for relevant Confluence page IDs
+   - Check `~/.claude/projects/memory/MEMORY.md` for relevant Confluence page IDs
 
 3. **Webex/Email** — find what people have said:
    - Search Outlook for recent threads about the topic
@@ -177,7 +177,7 @@ For Snowflake queries:
    - `DUO_AZURE_CA_INTEGRATIONS` — Azure CA / auth integrations
    - `DUO_AZURE_DIRS` — DirSync data
 4. Always filter out test/invalid customers
-5. Check `~/.claude/projects/-Users-benmyers/memory/MEMORY.md` Active Research section for past queries and known gotchas
+5. Check `~/.claude/projects/memory/MEMORY.md` Active Research section for past queries and known gotchas
 
 ### Step 3: Build the query plan
 

@@ -40,7 +40,7 @@ The `chrome-devtools` MCP server must be configured in `~/.mcp.json`.
 
 `$ARGUMENTS` can be:
 - A Webex recording URL (e.g., `https://cisco.webex.com/cisco/ldr.php?RCID=...`)
-- An email search query to find the recording (e.g., `from:atrapani weekly demo`)
+- An email search query to find the recording (e.g., `from:sender weekly demo`)
 - Empty — will prompt for URL or email search
 
 ## Steps
@@ -63,7 +63,7 @@ The `chrome-devtools` MCP server must be configured in `~/.mcp.json`.
 - Extract password from email body text (look for "Password" label followed by text)
 
 **If `$ARGUMENTS` is empty:**
-- Ask the user: "Paste a Webex recording URL, or give me an email search query to find one (e.g., 'from:atrapani weekly demo')"
+- Ask the user: "Paste a Webex recording URL, or give me an email search query to find one (e.g., 'from:sender weekly demo')"
 
 ### 2. Navigate to the recording
 

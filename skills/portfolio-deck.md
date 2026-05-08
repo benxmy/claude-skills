@@ -3,9 +3,9 @@ name: portfolio-deck
 description: Generate a portfolio status PPTX deck from current workboard data. Covers all active work projects with RAG status, current state, next steps, and blockers.
 user-invocable: true
 allowed-tools:
-  - Read(~/.claude/projects/-Users-benmyers/memory/*)
+  - Read(~/.claude/projects/memory/*)
   - Read(~/projects/claude-hub/server/*)
-  - Bash(cd /Users/benmyers/projects/claude-hub && node *)
+  - Bash(cd ~/projects/claude-hub && node *)
   - Bash(open *)
   - Bash(ls *)
 ---
@@ -23,7 +23,7 @@ Generate a PowerPoint deck summarizing all active work (Cisco) projects.
 1. Run the deck generation:
 
 ```bash
-cd /Users/benmyers/projects/claude-hub && node -e "import('./server/portfolio-deck.js').then(async m => { const p = await m.generateDeck(); console.log('Generated:', p); })"
+cd ~/projects/claude-hub && node -e "import('./server/portfolio-deck.js').then(async m => { const p = await m.generateDeck(); console.log('Generated:', p); })"
 ```
 
 2. Report the result to the user:

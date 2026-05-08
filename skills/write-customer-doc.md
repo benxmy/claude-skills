@@ -3,14 +3,14 @@ name: write-customer-doc
 description: Draft customer-facing documents (feature guides, release notes, alpha/beta materials, KB articles) using Ben's content style library. Outputs as markdown, Word, or both.
 user-invocable: true
 allowed-tools:
-  - Read(~/.claude/projects/-Users-benmyers/memory/*)
+  - Read(~/.claude/projects/memory/*)
   - Read(~/projects/content-style-library.md)
   - Read(~/projects/content-audit-results/*)
   - Read(~/Desktop/*)
   - Glob(~/projects/*)
   - Glob(~/Desktop/*)
   - Grep(~/projects/*)
-  - Grep(~/.claude/projects/-Users-benmyers/memory/*)
+  - Grep(~/.claude/projects/memory/*)
   - WebFetch
   - Write(~/projects/*)
   - Edit(~/projects/*)
@@ -57,7 +57,7 @@ Show the four types with one-line descriptions. Ask the user to pick one.
 
 Before asking questions, silently gather what you can. Run these in parallel:
 
-1. **Project memory** — search `~/.claude/projects/-Users-benmyers/memory/` for the topic.
+1. **Project memory** — search `~/.claude/projects/memory/` for the topic.
    Check project-specific memory files (e.g., `cii-data-in-duo.md`, `entra-lite-cii.md`).
 
 2. **Content style library** — read `~/projects/content-style-library.md`. You will use
