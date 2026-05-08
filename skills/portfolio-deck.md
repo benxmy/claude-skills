@@ -4,8 +4,8 @@ description: Generate a portfolio status PPTX deck from current workboard data. 
 user-invocable: true
 allowed-tools:
   - Read(~/.claude/projects/*/memory/*)
-  - Read(~/projects/claude-hub/server/*)
-  - Bash(cd ~/projects/claude-hub && node *)
+  - Read(~/projects/deck-generator/server/*)
+  - Bash(cd ~/projects/deck-generator && node *)
   - Bash(open *)
   - Bash(ls *)
 ---
@@ -23,7 +23,7 @@ Generate a PowerPoint deck summarizing all active work projects.
 1. Run the deck generation:
 
 ```bash
-cd ~/projects/claude-hub && node -e "import('./server/portfolio-deck.js').then(async m => { const p = await m.generateDeck(); console.log('Generated:', p); })"
+cd ~/projects/deck-generator && node -e "import('./server/portfolio-deck.js').then(async m => { const p = await m.generateDeck(); console.log('Generated:', p); })"
 ```
 
 2. Report the result to the user:

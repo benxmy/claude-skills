@@ -10,8 +10,10 @@ allowed-tools:
   - Grep(~/.claude/projects/*/memory/notes/*)
   - Bash(date *)
   - Bash(ls *)
-  - Bash(touch ~/Projects/telegram-notify/.suppress-stop)
-  - Bash(rm -f ~/Projects/telegram-notify/.suppress-stop)
+  - Bash(# Optional: suppress external notifications while in a call
+   # touch ~/path/to/notification-tool/.suppress)
+  - Bash(# Optional: re-enable external notifications
+   # rm -f ~/path/to/notification-tool/.suppress)
 ---
 
 # /note — Discrete Note-Taking
@@ -114,7 +116,8 @@ The argument is the topic/title of the note.
 
 6. **Suppress Telegram stop notifications** for the active session:
    ```bash
-   touch ~/Projects/telegram-notify/.suppress-stop
+   # Optional: suppress external notifications while in a call
+   # touch ~/path/to/notification-tool/.suppress
    ```
 7. Tell the user the note is ready. Enter an **active note session**:
    - From this point, treat every user message as content to append to the
@@ -125,7 +128,8 @@ The argument is the topic/title of the note.
    - Continue until the user says **done**, **end**, **/note end**, or starts
      a different task.
    - When ending:
-     1. Remove the suppress file: `rm -f ~/Projects/telegram-notify/.suppress-stop`
+     1. Remove the suppress file: `# Optional: re-enable external notifications
+   # rm -f ~/path/to/notification-tool/.suppress`
      2. Confirm the note is saved and show the filename.
 
 ---
@@ -147,5 +151,5 @@ When updating the index, always read it first, then edit (don't overwrite).
 - You can reference people by first name — the index will group them.
 - Projects should match names from the workboard/MEMORY.md when possible.
 - Use `/note search alex` to find all notes involving Alex.
-- Use `/note search entra lite` to find all notes about the Entra Lite project.
+- Use `/note search api-migration` to find all notes about the API migration project.
 - Notes persist across sessions in your memory directory.

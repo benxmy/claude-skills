@@ -5,8 +5,8 @@ user-invocable: true
 allowed-tools:
   - Read(~/.claude/projects/*/memory/*)
   - Write(~/.claude/projects/*/memory/aha-cache.json)
-  - Read(~/projects/claude-hub/server/*)
-  - Bash(cd ~/projects/claude-hub && node *)
+  - Read(~/projects/aha-connector/server/*)
+  - Bash(cd ~/projects/aha-connector && node *)
   - Bash(security find-generic-password *)
   - Bash(security add-generic-password *)
   - Bash(curl * <your-aha-instance>.aha.io *)
@@ -44,7 +44,7 @@ security add-generic-password -s "aha-api-key" -a "$USER" -w "THE_KEY" -U
 1. Pull latest data from Aha for all linked projects:
 
 ```bash
-cd ~/projects/claude-hub && node -e "
+cd ~/projects/aha-connector && node -e "
 import { discoverProjects } from './server/discovery.js';
 import { pullAllLinked, readCache } from './server/aha.js';
 const projects = discoverProjects().filter(p => p.category === 'work');
@@ -76,7 +76,7 @@ For each flagged/stale item:
 
 Push via:
 ```bash
-cd ~/projects/claude-hub && node -e "
+cd ~/projects/aha-connector && node -e "
 import { pushUpdate } from './server/aha.js';
 const result = await pushUpdate('RELEASE_ID', {
   productConfidence: 'VALUE',

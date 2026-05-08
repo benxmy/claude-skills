@@ -7,8 +7,8 @@ allowed-tools:
   - Write(~/yap-log.md)
   - Edit(~/yap-log.md)
   - Bash(date *)
-  - Bash(touch ~/Projects/telegram-notify/.suppress-stop)
-  - Bash(rm -f ~/Projects/telegram-notify/.suppress-stop)
+  - Bash(touch ~/notifications/.suppress)
+  - Bash(rm -f ~/notifications/.suppress)
 ---
 
 # /yap — The Yapper's API
@@ -69,7 +69,8 @@ as a yap entry — no need to prefix with `/yap` each time.
    If he says yes, run it before entering listen mode. If no, proceed.
 3. **Suppress Telegram stop notifications** for the listen session:
    ```bash
-   touch ~/Projects/telegram-notify/.suppress-stop
+   # Optional: suppress notifications during focused logging
+   # touch ~/notifications/.suppress
    ```
 4. Announce that listening mode is on:
    > "Listening. Just talk — everything you say gets logged. Say **stop** or
@@ -97,7 +98,8 @@ as a yap entry — no need to prefix with `/yap` each time.
 ### If `$ARGUMENTS` is `stop` — end listening session
 
 1. If currently in a listening session, end it.
-2. Remove the suppress file: `rm -f ~/Projects/telegram-notify/.suppress-stop`
+2. Remove the suppress file: `# Optional: re-enable notifications
+   # rm -f ~/notifications/.suppress`
 3. Show a quick recap: number of entries logged and a one-line summary.
 4. If not in a listening session, just say "No active listening session."
 
