@@ -30,7 +30,7 @@ Webex recording via Chrome DevTools Protocol.
 |-----------|---------|-----------|
 | [Chrome DevTools MCP server](https://github.com/anthropics/claude-code-chrome-devtools) | Browser automation to navigate Webex, enter passwords, and scrape content | Yes |
 | Google Chrome | Runs with `--remote-debugging-port=9222` for CDP access | Yes |
-| Microsoft Graph CLI (`msgraph`) | Search email for recording URLs and passwords. Any CLI or MCP tool that can search Outlook/M365 email works. | Only if using email search (not direct URL) |
+| [Microsoft Graph CLI](https://github.com/cisco-sbg/ZT-duo-cc-plugins/tree/main/plugins/duo-msgraph) (`msgraph`) | Search email for recording URLs and passwords. Any CLI or MCP tool that can search Outlook/M365 email works. | Only if using email search (not direct URL) |
 
 ## Prerequisites
 
