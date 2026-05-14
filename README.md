@@ -18,8 +18,7 @@ cd claude-skills
 # Install all core skills
 cp skills/morning-coffee.md skills/today.md skills/wrap-up.md \
    skills/yap.md skills/cos.md skills/note.md skills/deprioritize.md \
-   skills/think.md skills/finance.md skills/research.md \
-   skills/write-customer-doc.md ~/.claude/commands/
+   skills/research.md skills/write-customer-doc.md ~/.claude/commands/
 
 # Or install everything (core + integration)
 cp skills/*.md ~/.claude/commands/
@@ -62,15 +61,6 @@ Skills for producing documents and structured research.
 |-------|-------------|
 | `/write-customer-doc` | Draft customer-facing docs (feature guides, release notes, KB articles) |
 | `/research` | Structured research framework for product/opportunity or customer/adoption research |
-
-### Personal
-
-Skills for non-work use.
-
-| Skill | Description |
-|-------|-------------|
-| `/finance` | Personal financial planning — 401k optimization, retirement planning, contribution calculations |
-| `/think` | Thinking partner for reflective conversations — career, relationships, strategy |
 
 ---
 
