@@ -24,6 +24,14 @@ allowed-tools:
 Extract transcript, AI-generated summary, chapters, and action items from a
 Webex recording via Chrome DevTools Protocol.
 
+## Dependencies
+
+| Dependency | Purpose | Required? |
+|-----------|---------|-----------|
+| [Chrome DevTools MCP server](https://github.com/anthropics/claude-code-chrome-devtools) | Browser automation to navigate Webex, enter passwords, and scrape content | Yes |
+| Google Chrome | Runs with `--remote-debugging-port=9222` for CDP access | Yes |
+| [Microsoft Graph CLI](https://github.com/benxmy/claude-code-skills) (`msgraph`) | Search email for recording URLs and passwords | Only if using email search (not direct URL) |
+
 ## Prerequisites
 
 Chrome must be running with remote debugging enabled:
@@ -34,7 +42,7 @@ Chrome must be running with remote debugging enabled:
   --remote-allow-origins='*'
 ```
 
-The `chrome-devtools` MCP server must be configured in `~/.mcp.json`.
+The `chrome-devtools` MCP server must be configured in your Claude Code MCP settings (e.g., `~/.mcp.json` or project `.mcp.json`).
 
 ## Arguments
 
