@@ -3,5 +3,7 @@ skills/finance.md
 skills/invest.md
 skills/think.md
 
-# Untracked personal skill — contains internal identifiers, must not be published
+# board.md now lives in claude-skills-personal too. It names internal people and
+# contains an internal email address, so it must not be published from here.
+# Kept ignored so a stray copy in this tree can never be committed by `git add -A`.
 skills/board.md
